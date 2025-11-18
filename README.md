@@ -96,8 +96,8 @@ python run_ner.py \
 
 ## Results
 ```
-Model,F1 (avg ± std),Precision,Recall
-mBERT,81.7 ± 11.3,79.1,84.6
-umBERTo,83.2 ± 9.0,80.0,86.7
-MedBITR3+,84.3 ± 9.4,81.6,87.3`
+Model,F1,Precision,Recall
+mBERT,0.817 ± 0.113,0.791 ± 0.124,0.846 ± 0.103
+umBERTo,0.832 ± 0.090,0.800 ± 0.110 ,0.867 ± 0.085
+MedBITR3+,0.843 ± 0.094,0.816 ± 0.109,0.873 ± 0.082` 
 ```
