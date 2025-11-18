@@ -3,7 +3,6 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Paper](https://img.shields.io/badge/Paper-IEEE%202023-blue)](https://doi.org/10.1109/BIBM58861.2023.10385778)
-[![arXiv](https://img.shields.io/badge/arXiv-2311.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 
 Repository ufficiale del lavoro:  
 **"Named Entity Recognition in Italian Lung Cancer Clinical Reports using Transformers"**  
@@ -36,7 +35,7 @@ Full list with detailed descriptions and examples in:
 | ...     | ...                     | ...                                  |
 
 ## Requirements 
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 ## Data Preparation Pipeline
 
