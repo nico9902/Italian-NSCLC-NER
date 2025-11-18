@@ -22,7 +22,7 @@ We present the first publicly available implementation of a transformer-based NE
 
 ## Entity types (25)
 Full list with detailed descriptions and examples in:  
-[annotation_guidelines.pdf](./docs/annotation_guidelines.pdf)
+[annotation_guidelines.pdf](annotation_guidelines.pdf)
 
 | Acronym | Entity                  | Example                              |
 |---------|-------------------------|--------------------------------------|
@@ -35,15 +35,17 @@ Full list with detailed descriptions and examples in:
 | DRU     | Drug                    | pembrolizumab, osimertinib           |
 | ...     | ...                     | ...                                  |
 
+## Requirements 
+pip install -r requirements.txt
+
 ## Data Preparation Pipeline
 
 The full pipeline from raw PDF reports to training-ready folds:
 
-```text
 raw_pdf_reports/
 └── *.pdf
     ↓
-src/preprocessing/text_cleaning.py          ← Estrae solo la parte narrativa (rimuove header, footer, tabelle)
+src/preprocessing/text_cleaning.py          ← Extracts only the narrative section (removes header, footer, and tables)
     ↓
 clean_txt_reports/
 └── *.txt
@@ -52,16 +54,36 @@ Doccano<a href="https://doccano.github.io/doccano/" target="_blank" rel="noopene
     ↓
 doccano_export.jsonl
     ↓
-src/preprocessing/doccano2json.py           ← Converte JSONL → formato JSON standard
+src/preprocessing/doccano2json.py           ← Convert the JSONL file into standard JSON format
     ↓
 data/processed/annotated_corpus.json
     ↓
-src/preprocessing/group_k_fold.py           ← Crea 10 fold per paziente (stesso patient_id sempre nella stessa fold)
+src/preprocessing/group_k_fold.py           ← Create 10 folds by patient, ensuring that the same patient_id is always assigned to the same fold
     ↓
 data/folds/
 ├── fold_0_train.json, fold_0_test.json
 ├── fold_1_train.json, fold_1_test.json
 └── ...
 
-## Requirements 
-pip install -r requirements.txt
+An example of a JSON file to provide as input to the NER model is available in data/data.json.
+
+## Training & Evaluation
+
+python run_ner.py \
+    --model_name_or_path IVN-RIN/medBIT-r3-plus \
+    --tokenizer_name IVN-RIN/medBIT-r3-plus \
+    --train_file path/to/train.json \
+    --validation_file path/to/valid.json \
+    --test_file path/to/test.json \
+    --output_dir outputs/exp1 \
+    --num_train_epochs 12 \
+    --per_device_train_batch_size 8 \
+    --do_train True --do_eval True --do_predict True \
+    --overwrite_output_dir True
+
+## Results
+
+Model,F1 (avg ± std),Precision,Recall
+mBERT,81.7 ± 11.3,79.1,84.6
+umBERTo,83.2 ± 9.0,80.0,86.7
+MedBITR3+,84.3 ± 9.4,81.6,87.3
