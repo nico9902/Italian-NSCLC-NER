@@ -17,6 +17,7 @@ re
 regex==2024.5.10
 selenium
 seqeval==1.2.2
+statsmodels
 tokenizers==0.19.1
 torch==2.3.0
 tqdm==4.66.4
