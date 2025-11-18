@@ -2,7 +2,7 @@
 **Named Entity Recognition in Italian clinical reports of Non-Small Cell Lung Cancer (NSCLC) using transformer models**
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Paper](https://img.shields.io/badge/paper-IEEE%202023-blue)](https://doi.org/10.1109/ACCESS.2023.xxxxxxx)
+[![Paper](https://img.shields.io/badge/paper-IEEE%202023-blue)](https://doi.org/10.1109/BIBM58861.2023.10385778)
 
 Repository ufficiale del lavoro:  
 **"Named Entity Recognition in Italian Lung Cancer Clinical Reports using Transformers"**  
