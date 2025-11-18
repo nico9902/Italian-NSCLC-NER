@@ -1,41 +1,51 @@
-# Italian-NSCLC-NER
+# Italian-NSCLC-NER  
 **Named Entity Recognition in Italian clinical reports of Non-Small Cell Lung Cancer (NSCLC) using transformer models**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 [![Paper](https://img.shields.io/badge/Paper-IEEE%202023-blue)](https://doi.org/10.1109/BIBM58861.2023.10385778)
 
-Repository ufficiale del lavoro:  
+Official repository of:  
 **"Named Entity Recognition in Italian Lung Cancer Clinical Reports using Transformers"**  
-Domenico Paolo et al., IEEE BIBM 2023
+*Domenico Paolo et al., IEEE BIBM 2023*
+
+---
 
 ## Abstract
-We present the first publicly available implementation of a transformer-based NER system specifically developed for Italian clinical notes of patients with Non-Small Cell Lung Cancer (NSCLC). The model, fine-tuned from **MedBITR3+** (Biomedical BERT for Italian), achieves an average **F1-score of 84.3%** (strict entity-level) on 25 clinically relevant entities.
+This repository provides the first publicly available transformer-based NER system designed specifically for **Italian clinical reports** of patients with **Non-Small Cell Lung Cancer (NSCLC)**.  
+The model, fine-tuned from **MedBITR3+** (Biomedical BERT for Italian), achieves an average **F1-score of 84.3%** (strict entity-level) on **25 clinically relevant entity types**.
 
-## Key contributions
-- Annotation of 758 real-world Italian oncology/radiotherapy reports (257 patients)
-- Definition of **25 NSCLC-specific entity types**
-- Custom preprocessing pipeline for Italian clinical text
-- Fine-tuning with **focal loss** to handle severe class imbalance
-- 10-fold patient-level cross-validation
-- Outperforms mBERT and umBERTo by >2.5% F1 on average
+---
 
-## Entity types (25)
-Full list with detailed descriptions and examples in:  
-[annotation_guidelines.pdf](annotation_guidelines.pdf)
+## Key Contributions
+- Annotation of **758 real-world oncology and radiotherapy reports** (257 patients)  
+- Definition of **25 NSCLC-specific entity types**  
+- Custom preprocessing pipeline for Italian clinical text  
+- Fine-tuning with **focal loss** to mitigate severe class imbalance  
+- **10-fold patient-level cross-validation**  
+- Outperforms mBERT and umBERTo by **>2.5% average F1**
 
-| Acronym | Entity                  | Example                              |
-|---------|-------------------------|--------------------------------------|
-| CAN     | Cancer                  | adenocarcinoma, metastasi ossea      |
-| COM     | Comorbidity             | BPCO, diabete mellito tipo 2         |
-| STA     | Cancer stage            | stadio IV, malattia avanzata         |
-| FAN     | Focal anomaly           | nodulo spiculato, lesione sospetta  |
-| POS     | Anatomical position     | lobo superiore destro, ilo sinistro |
-| TPY     | Therapy                 | immunoterapia, radioterapia          |
-| DRU     | Drug                    | pembrolizumab, osimertinib           |
-| ...     | ...                     | ...                                  |
+---
 
-## Requirements 
-```pip install -r requirements.txt```
+## Entity Types
+Full descriptions and examples are available in the guidelines:  
+📄 [`annotation_guidelines.pdf`](annotation_guidelines.pdf)
+
+| Acronym | Entity Type          | Example                                   |
+|---------|---------------------|-------------------------------------------|
+| CAN     | Cancer              | adenocarcinoma, bone metastasis           |
+| COM     | Comorbidity         | COPD, type 2 diabetes                     |
+| STA     | Cancer stage        | stage IV, advanced disease                |
+| FAN     | Focal anomaly       | spiculated nodule, suspicious lesion      |
+| POS     | Anatomical position | right upper lobe, left hilum              |
+| TPY     | Therapy             | immunotherapy, radiotherapy               |
+| DRU     | Drug                | pembrolizumab, osimertinib                |
+| ...     | ...                 | ...                                       |
+
+---
+
+## Requirements
+```bash
+pip install -r requirements.txt`
 
 ## Data Preparation Pipeline
 
