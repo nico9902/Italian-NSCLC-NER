@@ -80,6 +80,7 @@ An example of a JSON file to provide as input to the NER model is available in d
 
 ## Training & Evaluation
 
+```bash
 python run_ner.py \
     --model_name_or_path IVN-RIN/medBIT-r3-plus \
     --tokenizer_name IVN-RIN/medBIT-r3-plus \
@@ -90,11 +91,13 @@ python run_ner.py \
     --num_train_epochs 12 \
     --per_device_train_batch_size 8 \
     --do_train True --do_eval True --do_predict True \
-    --overwrite_output_dir True
+    --overwrite_output_dir True`
+```
 
 ## Results
-
+```
 Model,F1 (avg ± std),Precision,Recall
 mBERT,81.7 ± 11.3,79.1,84.6
 umBERTo,83.2 ± 9.0,80.0,86.7
-MedBITR3+,84.3 ± 9.4,81.6,87.3
+MedBITR3+,84.3 ± 9.4,81.6,87.3`
+```
