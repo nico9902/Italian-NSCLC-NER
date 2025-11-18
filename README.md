@@ -46,12 +46,13 @@ Full descriptions and examples are available in the guidelines:
 ## Requirements
 ```bash
 pip install -r requirements.txt`
+```
 
 ## Data Preparation Pipeline
 
 The full pipeline from raw PDF reports to training-ready folds:
 
-raw_pdf_reports/
+```raw_pdf_reports/
 └── *.pdf
     ↓
 src/preprocessing/text_cleaning.py          ← Extracts only the narrative section (removes header, footer, and tables)
@@ -72,7 +73,8 @@ src/preprocessing/group_k_fold.py           ← Create 10 folds by patient, ensu
 data/folds/
 ├── fold_0_train.json, fold_0_test.json
 ├── fold_1_train.json, fold_1_test.json
-└── ...
+└── ... `
+```
 
 An example of a JSON file to provide as input to the NER model is available in data/data.json.
 
