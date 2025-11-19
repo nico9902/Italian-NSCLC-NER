@@ -73,7 +73,7 @@ data/folds/
 
 An example of a JSON file to provide as input to the NER model is available in data/data.json.
 
-## How to run
+---
 
 ## How to run
 
