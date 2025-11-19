@@ -8,13 +8,9 @@ Official repository of:
 **"Named Entity Recognition in Italian Lung Cancer Clinical Reports using Transformers"**  
 *Domenico Paolo et al., IEEE BIBM 2023*
 
----
-
 ## Overview
 This repository provides the first publicly available transformer-based NER system designed specifically for **Italian clinical reports** of patients with **Non-Small Cell Lung Cancer (NSCLC)**.  
 The model, fine-tuned from **MedBITR3+** (Biomedical BERT for Italian), achieves an average **F1-score of 84.3%** (strict entity-level) on **25 clinically relevant entity types**.
-
----
 
 ## Key Contributions
 - Annotation of **758 real-world oncology and radiotherapy reports** (257 patients)  
@@ -23,8 +19,6 @@ The model, fine-tuned from **MedBITR3+** (Biomedical BERT for Italian), achieves
 - Fine-tuning with **focal loss** to mitigate severe class imbalance  
 - **10-fold patient-level cross-validation**  
 - Outperforms mBERT and umBERTo by **>2.5% average F1**
-
----
 
 ## Entity Types
 Full descriptions and examples are available in the guidelines:  
@@ -41,7 +35,6 @@ Full descriptions and examples are available in the guidelines:
 | DRU     | Drug                | pembrolizumab, osimertinib                |
 | ...     | ...                 | ...                                       |
 
----
 
 ## Data Preparation Pipeline
 
@@ -72,8 +65,6 @@ data/folds/
 ```
 
 An example of a JSON file to provide as input to the NER model is available in data/data.json.
-
----
 
 ## How to run
 
