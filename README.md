@@ -10,7 +10,7 @@ Official repository of:
 
 ---
 
-## Abstract
+## Overview
 This repository provides the first publicly available transformer-based NER system designed specifically for **Italian clinical reports** of patients with **Non-Small Cell Lung Cancer (NSCLC)**.  
 The model, fine-tuned from **MedBITR3+** (Biomedical BERT for Italian), achieves an average **F1-score of 84.3%** (strict entity-level) on **25 clinically relevant entity types**.
 
@@ -43,11 +43,6 @@ Full descriptions and examples are available in the guidelines:
 
 ---
 
-## Requirements
-```bash
-pip install -r requirements.txt`
-```
-
 ## Data Preparation Pipeline
 
 The full pipeline from raw PDF reports to training-ready folds:
@@ -78,9 +73,18 @@ data/folds/
 
 An example of a JSON file to provide as input to the NER model is available in data/data.json.
 
-## Training & Evaluation
+## How to run
 
-```bash
+## How to run
+
+1. Install dependencies:
+```
+pip install -r requirements.txt
+```
+
+2. Train the NER model:
+
+```
 python run_ner.py \
     --model_name_or_path IVN-RIN/medBIT-r3-plus \
     --tokenizer_name IVN-RIN/medBIT-r3-plus \
@@ -101,3 +105,21 @@ mBERT,0.817 ± 0.113,0.791 ± 0.124,0.846 ± 0.103
 umBERTo,0.832 ± 0.090,0.800 ± 0.110 ,0.867 ± 0.085
 MedBITR3+,0.843 ± 0.094,0.816 ± 0.109,0.873 ± 0.082` 
 ```
+
+## 🎓 Citation
+
+If you use this code, please cite our work:
+```
+@inproceedings{paolo2023named,
+  title={Named entity recognition in italian lung cancer clinical reports using transformers},
+  author={Paolo, Domenico and Bria, Alessandro and Greco, Carlo and Russano, Marco and Ramella, Sara and Soda, Paolo and Sicilia, Rosa},
+  booktitle={2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)},
+  pages={4101--4107},
+  year={2023},
+  organization={IEEE}
+}
+```
+
+## 📜 License
+
+This project is licensed. Please review the [LICENSE](LICENSE) file for more information.
